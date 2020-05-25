@@ -1,0 +1,17 @@
+{
+  "name": "random-emails",
+  "version": "1.0.0",
+  "description": "get an email list and create a new list with emails in random order",
+  "homepage": "github.com/reisneto",
+  "repository": {
+    "type": "git",
+    "url": "#"
+  },
+  "main": "randomEmails.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["email", "random"],
+  "author": "Álvaro Reis",
+  "license": "ISC"
+}
