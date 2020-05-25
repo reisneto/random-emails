@@ -7,11 +7,19 @@
     "type": "git",
     "url": "#"
   },
-  "main": "randomEmails.js",
-  "scripts": {
-    "start": "node index.js"
+  "bin": {
+    "random-emails": "./index.js"
   },
-  "keywords": ["email", "random"],
+  "keywords": [
+    "email",
+    "random"
+  ],
   "author": "Álvaro Reis",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^15.3.1"
+  },
+  "engines": {
+    "node": ">=8"
+  }
 }
