@@ -14,16 +14,19 @@ const convertCmd = {
     },
 
     handler({ type, filename }) {
+        const logger = require('../util/logger');
+        logger.info({name: 'convert', msg: 'Start convert command'});
         const fs = require('fs');
         const os = require('os');
-        const [filenameWithoutType] = filename.split('.');
+        const [filenameWithoutType] = filename.split('.');        
+        const randEmails = require(`../${filename}`);                        
 
-        const randEmails = require(`../${filename}`);
-        console.log(randEmails.length);
         randEmails.forEach((email, index) => {
             fs.appendFileSync(`${filenameWithoutType}.${type}`, `${email.value}${os.EOL}`);
-            console.log(index);
+            logger.debug({name: 'convert', msg: `index ${index}` });
         });
+
+        logger.info({name: 'convert', msg: 'End convert command'});
     }
 };
 
