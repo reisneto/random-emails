@@ -2,7 +2,7 @@ let emails = require('../data/emails.json');
 const fs = require('fs');
 
 const createRandomFileCmd = {
-    command: 'randomize',
+    command: ['randomize', '$0'],
     desc: 'Randomize an email list',
     builder(yargs) {
         yargs
