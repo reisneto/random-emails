@@ -22,7 +22,7 @@ const convertCmd = {
         const randEmails = require(`../${filename}`);                        
 
         randEmails.forEach((email, index) => {
-            fs.appendFileSync(`${filenameWithoutType}.${type}`, `${email.value}${os.EOL}`);
+            fs.appendFileSync(`${process.cwd()}/out/${filenameWithoutType}.${type}`, `${email.value}${os.EOL}`);
             logger.debug({name: 'convert', msg: `index ${index}` });
         });
 

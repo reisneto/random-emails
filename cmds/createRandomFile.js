@@ -22,16 +22,16 @@ const createRandomFileCmd = {
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min)) + min;
         }
-        logger.info({name: 'randomize', msg: 'Start generate random list'});
+        logger.info({name: 'randomize', msg: `Start generate random list with ${number} elements`});
         for(let i=0; i<number; i++) {
             index = getRandomInt(0, emails_remaining--);
             randomEmails.push(emails[index]);
             emails.splice(index, 1);    
         }
-        logger.info({name: 'randomize', msg: 'End generate random list'});
+        logger.info({name: 'randomize', msg: 'End generate random list with'});
         
         const filename = `randEmails${number}`;
-        fs.writeFileSync(`${filename}.json`, JSON.stringify(randomEmails));
+        fs.writeFileSync(`${process.cwd()}/out/${filename}.json`, JSON.stringify(randomEmails));
         
         logger.info({name: 'randomize', msg: 'End randomize command'});
         return filename;
